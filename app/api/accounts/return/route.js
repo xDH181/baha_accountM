@@ -20,7 +20,7 @@ export async function POST(req) {
       return NextResponse.json({ error: 'Account is already available' }, { status: 400 });
     }
 
-    if (account.current_user_email !== user && user !== 'admin@admin.com') {
+    if (account.current_user_email !== user && user !== 'admin@admin.com' && user !== 'admin@gmail.com') {
       return NextResponse.json({ error: 'Unauthorized to return this account' }, { status: 403 });
     }
 

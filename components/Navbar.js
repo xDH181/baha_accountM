@@ -32,8 +32,7 @@ export default function Navbar() {
         
         <div className="nav-links">
           <Link href="/" className="active">Bảng điều khiển</Link>
-          <Link href="#">Lịch sử mượn</Link>
-          {user && user.email === 'admin@admin.com' && (
+          {user && (user.role === 'admin' || user.email === 'admin@admin.com' || user.email === 'admin@gmail.com') && (
             <Link href="/admin" style={{ color: '#f59e0b' }}>Admin Dashboard</Link>
           )}
         </div>

@@ -11,8 +11,8 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function test() {
   const { data, error } = await supabase.from('users').select('*');
-  console.log('Error:', error);
-  console.log('Data:', data);
+  console.log('Users:', data);
+  if (error) console.error('Error:', error);
 }
 
 test();

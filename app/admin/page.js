@@ -46,7 +46,7 @@ export default function AdminDashboard() {
       return;
     }
     const user = JSON.parse(savedUser);
-    if (user.email !== 'admin@admin.com') {
+    if (user.role !== 'admin' && user.email !== 'admin@admin.com' && user.email !== 'admin@gmail.com') {
       alert('Không có quyền truy cập');
       router.push('/');
       return;
